@@ -19,9 +19,6 @@ $env.config = {
         use_ls_colors: true # set this to true to enable file/path/directory completions using LS_COLORS
     }
 
-    # enables terminal shell integration. Off by default, as some terminals have issues with this.
-    shell_integration: false
-
     # Per-plugin configuration. See https://www.nushell.sh/contributor-book/plugins.html#configuration.
     plugins: {}
 }
@@ -32,3 +29,5 @@ source ($nu.config-path | path dirname | path join "oh-my-posh.nu")
 source ($nu.config-path | path dirname | path join "zoxide.nu")
 
 source ($nu.config-path | path dirname | path join "completions.git.nu")
+
+source ($nu.config-path | path dirname | path join "addins.nu")
