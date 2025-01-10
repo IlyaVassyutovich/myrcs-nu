@@ -1,0 +1,1 @@
+./nu_scripts/custom-completions/git/git-completions.nu

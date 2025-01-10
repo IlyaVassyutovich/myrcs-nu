@@ -30,3 +30,5 @@ source ($nu.config-path | path dirname | path join "config.keybindings.nu")
 
 source ($nu.config-path | path dirname | path join "oh-my-posh.nu")
 source ($nu.config-path | path dirname | path join "zoxide.nu")
+
+source ($nu.config-path | path dirname | path join "completions.git.nu")
