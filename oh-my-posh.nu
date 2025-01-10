@@ -1,7 +1,10 @@
-$env.config = ($env.config | upsert render_right_prompt_on_last_line true)
+# make sure we have the right prompt render correctly
+if ($env.config? | is-not-empty) {
+    $env.config = ($env.config | upsert render_right_prompt_on_last_line true)
+}
 
 $env.POWERLINE_COMMAND = 'oh-my-posh'
-$env.POSH_THEME = "c:\\Program Files (x86)\\oh-my-posh\\themes\\catppuccin_mocha.omp.json"
+$env.POSH_THEME = ($nu.config-path | path dirname | path join "oh-my-posh.config.json")
 $env.PROMPT_INDICATOR = ""
 $env.POSH_PID = (random uuid)
 $env.POSH_SHELL_VERSION = (version | get version)
@@ -23,12 +26,19 @@ $env.PROMPT_MULTILINE_INDICATOR = (^"C:/Program Files (x86)/oh-my-posh/bin/oh-my
 $env.PROMPT_COMMAND = { ||
     # hack to set the cursor line to 1 when the user clears the screen
     # this obviously isn't bulletproof, but it's a start
-    let clear = (history | is-empty) or ((history | last 1 | get 0.command) == "clear")
+    mut clear = false
+    if $nu.history-enabled {
+        $clear = (history | is-empty) or ((history | last 1 | get 0.command) == "clear")
+    }
+
+    if ($env.SET_POSHCONTEXT? | is-not-empty) {
+        do --env $env.SET_POSHCONTEXT
+    }
 
     ^"C:/Program Files (x86)/oh-my-posh/bin/oh-my-posh.exe" print primary $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)" $"--execution-time=(posh_cmd_duration)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=(posh_width)" $"--cleared=($clear)"
 }
 
-$env.PROMPT_COMMAND_RIGHT = { ||    
+$env.PROMPT_COMMAND_RIGHT = { ||
     ^"C:/Program Files (x86)/oh-my-posh/bin/oh-my-posh.exe" print right $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)" $"--execution-time=(posh_cmd_duration)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=(posh_width)"
 }
 
@@ -40,4 +50,8 @@ if "false" == "true" {
 
 if "false" == "true" {
     echo ""
+}
+
+if "false" == "true" {
+    ^"C:/Program Files (x86)/oh-my-posh/bin/oh-my-posh.exe" upgrade
 }
