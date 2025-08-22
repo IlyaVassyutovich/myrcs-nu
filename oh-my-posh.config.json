@@ -11,12 +11,13 @@
     "background": "transparent",
     "foreground": "foreground",
     "template": "\uf105 ",
-    "newline": false
+    "newline": true
   },
   "blocks": [
     {
       "type": "prompt",
       "alignment": "left",
+      "newline": false,
       "segments": [
         {
           "properties": {
@@ -48,22 +49,12 @@
           "foreground": "p:lavender",
           "type": "git",
           "style": "plain"
-        },
-        {
-          "properties": {
-            "cache_duration": "none"
-          },
-          "template": "\uf105",
-          "foreground": "p:closer",
-          "type": "text",
-          "style": "plain"
         }
       ]
     },
     {
-      "type": "rprompt",
+      "type": "prompt",
       "alignment": "right",
-      "filler": ".",
       "segments": [
         {
           "properties": {
@@ -96,6 +87,22 @@
           "template": "{{ .HostName }} ",
           "foreground": "p:blue",
           "type": "session",
+          "style": "plain"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\uf105",
+          "foreground": "p:closer",
+          "type": "text",
           "style": "plain"
         }
       ]
