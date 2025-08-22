@@ -14,24 +14,6 @@
       "segments": [
         {
           "properties": {
-            "cache_duration": "none"
-          },
-          "template": "{{.Icon}} ",
-          "foreground": "p:os",
-          "type": "os",
-          "style": "plain"
-        },
-        {
-          "properties": {
-            "cache_duration": "none"
-          },
-          "template": "{{ .UserName }}@{{ .HostName }} ",
-          "foreground": "p:blue",
-          "type": "session",
-          "style": "plain"
-        },
-        {
-          "properties": {
             "cache_duration": "none",
             "folder_icon": "..\ue5fe..",
             "home_icon": "~",
@@ -68,6 +50,46 @@
           "template": "\uf105",
           "foreground": "p:closer",
           "type": "text",
+          "style": "plain"
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "alignment": "right",
+      "filler": ".",
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ .UserName }}",
+          "foreground": "p:blue",
+          "type": "session",
+          "style": "plain"
+        },
+        {
+          "template": " on ",
+          "foreground": "p:darkBlue",
+          "type": "text",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{.Icon}} ",
+          "foreground": "p:os",
+          "type": "os",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ .HostName }} ",
+          "foreground": "p:blue",
+          "type": "session",
           "style": "plain"
         }
       ]
