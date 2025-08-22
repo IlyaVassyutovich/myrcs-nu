@@ -7,6 +7,12 @@
     "os": "#ACB0BE",
     "pink": "#F5C2E7"
   },
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "foreground",
+    "template": "\uf105 ",
+    "newline": false
+  },
   "blocks": [
     {
       "type": "prompt",
