@@ -104,6 +104,18 @@
       "newline": true,
       "segments": [
         {
+          "type": "project",
+          "style": "plain",
+          "template": "╟ {{ if .Error }}{{ .Error }}{{ else }}{{ if .Name }}\udb80\udfd6 {{ .Name }}{{ end }}{{ end }}"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
           "properties": {
             "cache_duration": "none"
           },
