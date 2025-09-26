@@ -9,3 +9,7 @@ def sln [] {
 def a7m [] {
     ^net use \\agamemnon.internal.iv.link\public /user:iv /persistent:yes
 }
+
+def scratch [] {
+    ^code $env.me__ScratchPads__Dir
+}
