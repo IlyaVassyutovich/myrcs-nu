@@ -26,7 +26,7 @@
             "home_icon": "~",
             "style": "agnoster_short"
           },
-          "template": "╓ {{ .Path }} ",
+          "template": "╓ {{ .Path }}",
           "foreground": "p:pink",
           "type": "path",
           "style": "plain"
@@ -65,7 +65,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "{{ .HostName }} ",
+          "template": "{{ .HostName }}",
           "foreground": "p:blue",
           "type": "session",
           "style": "plain"
@@ -91,7 +91,7 @@
             "revert_icon": "\uf0e2 ",
             "tag_icon": "\uf412 "
           },
-          "template": "╟ {{ .HEAD }} ",
+          "template": "╟ {{ .HEAD }}",
           "foreground": "p:lavender",
           "type": "git",
           "style": "plain"
