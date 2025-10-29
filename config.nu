@@ -23,10 +23,19 @@ $env.config = {
     plugins: {}
 }
 
-source ($nu.config-path | path dirname | path join "config.keybindings.nu")
+const configDir: string = $nu.config-path | path dirname
 
-source ($nu.config-path | path dirname | path join "zoxide.nu")
+source ($configDir | path join "config.keybindings.nu")
 
-source ($nu.config-path | path dirname | path join "nu_scripts" "custom-completions" "git" "git-completions.nu")
+source ($configDir | path join "zoxide.nu")
 
-source ($nu.config-path | path dirname | path join "addins.nu")
+source ($configDir | path join "nu_scripts" "custom-completions" "git" "git-completions.nu")
+
+source ($configDir | path join "addins.dotnet.nu")
+source ($configDir | path join "addins.git.nu")
+source ($configDir | path join "addins.ivlink.nu")
+
+oh-my-posh init --config ($configDir | path join "oh-my-posh.config.json") nu
+
+# This is not working D:
+# $nu.config-path | path dirname | ls $in | insert "filename" { |row| $row.name | path basename } | where filename =~ `^addins\..+\.nu$` | each { source $in.name }
