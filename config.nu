@@ -6,6 +6,10 @@
 $env.config = {
     show_banner: false
 
+    history: {
+        file_format: "sqlite"
+    }
+
     completions: {
         case_sensitive: false # set to true to enable case-sensitive completions
         quick: true    # set this to false to prevent auto-selecting completions when only one remains
