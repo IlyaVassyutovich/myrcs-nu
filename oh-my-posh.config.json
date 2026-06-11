@@ -20,6 +20,7 @@
       "newline": false,
       "segments": [
         {
+          "type": "path",
           "properties": {
             "cache_duration": "none",
             "folder_icon": "..\ue5fe..",
@@ -28,7 +29,6 @@
           },
           "template": "╓ {{ .Path }}",
           "foreground": "p:pink",
-          "type": "path",
           "style": "plain"
         }
       ]
@@ -38,36 +38,36 @@
       "alignment": "right",
       "segments": [
         {
+          "type": "session",
           "properties": {
             "cache_duration": "none"
           },
           "template": "{{ .UserName }}",
           "foreground": "p:blue",
-          "type": "session",
           "style": "plain"
         },
         {
+          "type": "text",
           "template": " on ",
           "foreground": "p:darkBlue",
-          "type": "text",
           "style": "plain"
         },
         {
+          "type": "os",
           "properties": {
             "cache_duration": "none"
           },
           "template": "{{.Icon}} ",
           "foreground": "p:os",
-          "type": "os",
           "style": "plain"
         },
         {
+          "type": "session",
           "properties": {
             "cache_duration": "none"
           },
           "template": "{{ .HostName }}",
           "foreground": "p:blue",
-          "type": "session",
           "style": "plain"
         }
       ]
@@ -78,6 +78,7 @@
       "newline": true,
       "segments": [
         {
+          "type": "git",
           "properties": {
             "branch_icon": "\ue725 ",
             "cache_duration": "none",
@@ -93,7 +94,6 @@
           },
           "template": "╟ {{ .HEAD }}",
           "foreground": "p:lavender",
-          "type": "git",
           "style": "plain"
         }
       ]
@@ -116,12 +116,12 @@
       "newline": true,
       "segments": [
         {
+          "type": "text",
           "properties": {
             "cache_duration": "none"
           },
           "template": "╚\uf105",
           "foreground": "p:closer",
-          "type": "text",
           "style": "plain"
         }
       ]
