@@ -22,7 +22,6 @@
         {
           "type": "path",
           "properties": {
-            "cache_duration": "none",
             "folder_icon": "..\ue5fe..",
             "home_icon": "~",
             "style": "agnoster_short"
@@ -39,9 +38,6 @@
       "segments": [
         {
           "type": "session",
-          "properties": {
-            "cache_duration": "none"
-          },
           "template": "{{ .UserName }}",
           "foreground": "p:blue",
           "style": "plain"
@@ -54,18 +50,12 @@
         },
         {
           "type": "os",
-          "properties": {
-            "cache_duration": "none"
-          },
           "template": "{{.Icon}} ",
           "foreground": "p:os",
           "style": "plain"
         },
         {
           "type": "session",
-          "properties": {
-            "cache_duration": "none"
-          },
           "template": "{{ .HostName }}",
           "foreground": "p:blue",
           "style": "plain"
@@ -81,7 +71,6 @@
           "type": "git",
           "properties": {
             "branch_icon": "\ue725 ",
-            "cache_duration": "none",
             "cherry_pick_icon": "\ue29b ",
             "commit_icon": "\uf417 ",
             "fetch_status": false,
@@ -117,9 +106,6 @@
       "segments": [
         {
           "type": "text",
-          "properties": {
-            "cache_duration": "none"
-          },
           "template": "╚\uf105",
           "foreground": "p:closer",
           "style": "plain"
