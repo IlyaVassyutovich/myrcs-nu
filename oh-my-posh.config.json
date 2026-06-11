@@ -114,5 +114,11 @@
     }
   ],
   "version": 3,
-  "final_space": true
+  "final_space": true,
+  "upgrade": {
+    "notice": true,
+    "interval": "24h",
+    "source": "cdn",
+    "auto": false
+  }
 }
