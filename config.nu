@@ -25,6 +25,15 @@ $env.config = {
 
     # Per-plugin configuration. See https://www.nushell.sh/contributor-book/plugins.html#configuration.
     plugins: {}
+
+    abbreviations: {
+        ll: "ls -l",
+        g: "git",
+        s: "ssh",
+        c: "claude",
+        mk: "minikube",
+        d: "docker"
+    }
 }
 
 const configDir: string = $nu.config-path | path dirname
